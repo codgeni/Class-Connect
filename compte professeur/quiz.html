@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz & Évaluations - Professeur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-600 antialiased h-screen overflow-hidden">
+    <div class="h-screen flex overflow-hidden bg-slate-50">
+        <aside class="w-64 flex-shrink-0 bg-slate-900 text-slate-400 flex flex-col transition-all duration-300">
+            <div class="pt-8 pb-6 px-6 border-b border-slate-800">
+                <div class="flex flex-col items-center">
+                    <div class="h-20 w-20 rounded-full bg-slate-700 border-2 border-slate-600 flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="40" height="40" viewBox="0 0 24 24" data-icon="lucide:user" data-width="40" class="iconify iconify--lucide text-slate-400"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></g></svg>
+                    </div>
+                    <h2 class="text-lg font-semibold text-white mb-1">Prof. J. Dupont</h2>
+                    <p class="text-sm text-slate-300 mb-1">Institution Nouvelle Source</p>
+                    <p class="text-sm text-slate-400">Mathématiques • Physique</p>
+                </div>
+            </div>
+            <div class="px-6 py-4 border-b border-slate-800">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:mail" data-width="16" class="iconify iconify--lucide text-slate-500"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="m22 7l-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect width="20" height="16" x="2" y="4" rx="2"></rect></g></svg>
+                        <span class="text-sm text-slate-300">j.dupont@ins.edu</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:phone" data-width="16" class="iconify iconify--lucide text-slate-500"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2a19.79 19.79 0 0 1-8.63-3.07a19.5 19.5 0 0 1-6-6a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></g></svg>
+                        <span class="text-sm text-slate-300">+509 36 12 34 56</span>
+                    </div>
+                </div>
+                <div class="mt-4 h-px bg-slate-800"></div>
+            </div>
+            <nav class="flex-1 overflow-y-auto no-scrollbar py-4 px-3 space-y-1">
+                <a href="index-prof.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:layout-dashboard" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></g></svg>
+                    Dashboard
+                </a>
+                <a href="fiches-cours.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:book" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"></path></svg>
+                    Fiches de cours
+                </a>
+                <a href="devoirs.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:file-text" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M6 22a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8a2.4 2.4 0 0 1 1.704.706l3.588 3.588A2.4 2.4 0 0 1 20 8v12a2 2 0 0 1-2 2z"></path><path d="M14 2v5a1 1 0 0 0 1 1h5M10 9H8m8 4H8m8 4H8"></path></g></svg>
+                    Devoirs
+                </a>
+                <a href="quiz.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md bg-slate-800 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:clipboard-check" data-width="20" class="iconify mr-3 text-blue-400 iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7l2 2l4-4m-6 4v6m4-6v6"></path></g></svg>
+                    Quiz & Évaluations
+                </a>
+                <a href="correction.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:check-circle" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11l3 3L22 4"></path></g></svg>
+                    Correction & Notes
+                </a>
+                <a href="messages.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:message-square" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></g></svg>
+                    Messages
+                </a>
+                <a href="parametres.html" class="group flex items-center px-3 py-2.5 text-sm font-medium rounded-md hover:text-white hover:bg-slate-800 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="20" height="20" viewBox="0 0 24 24" data-icon="lucide:settings" data-width="20" class="iconify mr-3 group-hover:text-blue-400 transition-colors iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path><circle cx="12" cy="12" r="3"></circle></g></svg>
+                    Paramètres
+                </a>
+            </nav>
+            <div class="px-6 py-4 border-t border-slate-800">
+                <a href="../compte etudiant/login.html" class="w-full flex items-center justify-center px-4 py-2.5 text-sm font-medium rounded-md text-red-400 hover:text-red-300 hover:bg-red-900/20 transition-colors border border-red-400/30 hover:border-red-400/50">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:log-out" data-width="18" class="iconify mr-2 iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m16 17l5-5l-5-5m5 5H9m0 9H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path></svg>
+                    Déconnexion
+                </a>
+            </div>
+        </aside>
+
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white border-b border-slate-200 h-16 flex items-center justify-between px-8 shadow-sm z-10">
+                <div class="flex items-center gap-4">
+                    <h2 class="text-2xl font-semibold text-slate-800 tracking-tight">Quiz & Évaluations</h2>
+                </div>
+                <button onclick="openModal('modal-quiz')" class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:plus" data-width="18" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7-7v14"></path></svg>
+                    Nouveau quiz
+                </button>
+            </header>
+
+            <main class="flex-1 overflow-y-auto bg-slate-50 p-8">
+                <div class="max-w-7xl mx-auto space-y-6">
+                    
+                    <!-- Filtres -->
+                    <div class="bg-white border border-slate-200 rounded-xl shadow-sm p-4">
+                        <div class="flex flex-wrap items-center gap-4">
+                            <div class="flex-1 min-w-[200px]">
+                                <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Toutes les matières</option>
+                                    <option>Mathématiques</option>
+                                    <option>Physique</option>
+                                </select>
+                            </div>
+                            <div class="flex-1 min-w-[200px]">
+                                <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Toutes les classes</option>
+                                    <option>Secondaire 1</option>
+                                    <option>Secondaire 2</option>
+                                    <option>Secondaire 3</option>
+                                </select>
+                            </div>
+                            <div class="flex-1 min-w-[200px]">
+                                <input type="text" placeholder="Rechercher..." class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Liste des quiz -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Quiz 1 -->
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                            <div class="p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-shrink-0 bg-purple-100 text-purple-600 p-3 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" data-icon="lucide:clipboard-check" data-width="24" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7l2 2l4-4m-6 4v6m4-6v6"></path></g></svg>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:edit" data-width="18" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7m-4-4l4-4m-4 0l4 4m0 0l-4 4"></path></svg>
+                                        </button>
+                                        <button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:trash-2" data-width="18" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">Quiz Algèbre - Chapitre 4</h3>
+                                <div class="space-y-2 mb-4">
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:book-open" data-width="16" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z"></path></svg>
+                                        <span>Mathématiques</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:users" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 .87 7.75"></path></g></svg>
+                                        <span>Secondaire 3</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:clock" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></g></svg>
+                                        <span>30 minutes</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:check-circle" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11l3 3L22 4"></path></g></svg>
+                                        <span>Note automatique</span>
+                                    </div>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                    <span class="text-xs text-slate-400">25/28 élèves ont répondu</span>
+                                    <button class="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline">
+                                        Voir résultats →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quiz 2 -->
+                        <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow">
+                            <div class="p-6">
+                                <div class="flex items-start justify-between mb-4">
+                                    <div class="flex-shrink-0 bg-blue-100 text-blue-600 p-3 rounded-lg">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" data-icon="lucide:clipboard-check" data-width="24" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"></rect><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2m4 7l2 2l4-4m-6 4v6m4-6v6"></path></g></svg>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <button class="p-2 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:edit" data-width="18" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7m-4-4l4-4m-4 0l4 4m0 0l-4 4"></path></svg>
+                                        </button>
+                                        <button class="p-2 text-slate-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="18" height="18" viewBox="0 0 24 24" data-icon="lucide:trash-2" data-width="18" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6h18m-2 0v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <h3 class="text-lg font-semibold text-slate-800 mb-2">Évaluation Physique</h3>
+                                <div class="space-y-2 mb-4">
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:book-open" data-width="16" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 7v14m-9-3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4a4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3a3 3 0 0 0-3-3z"></path></svg>
+                                        <span>Physique</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:users" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 .87 7.75"></path></g></svg>
+                                        <span>Secondaire 3</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:clock" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></g></svg>
+                                        <span>45 minutes</span>
+                                    </div>
+                                    <div class="flex items-center gap-2 text-sm text-slate-600">
+                                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="16" height="16" viewBox="0 0 24 24" data-icon="lucide:user-check" data-width="16" class="iconify iconify--lucide"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="m16 11l2 2l4-4"></path></g></svg>
+                                        <span>Note manuelle</span>
+                                    </div>
+                                </div>
+                                <div class="pt-4 border-t border-slate-100 flex items-center justify-between">
+                                    <span class="text-xs text-slate-400">28/28 élèves ont répondu</span>
+                                    <button class="text-sm font-medium text-blue-600 hover:text-blue-700 hover:underline">
+                                        Voir résultats →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Modal Nouveau Quiz -->
+    <div id="modal-quiz" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+            <div class="p-6 border-b border-slate-200">
+                <div class="flex items-center justify-between">
+                    <h3 class="text-xl font-semibold text-slate-800">Nouveau Quiz</h3>
+                    <button onclick="closeModal('modal-quiz')" class="text-slate-400 hover:text-slate-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" data-icon="lucide:x" data-width="24" class="iconify iconify--lucide"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 6L6 18M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+            </div>
+            <div class="p-6 space-y-6">
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Titre du quiz *</label>
+                    <input type="text" placeholder="Ex: Quiz Algèbre - Chapitre 4" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Classe *</label>
+                        <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Sélectionner une classe</option>
+                            <option>Secondaire 1</option>
+                            <option>Secondaire 2</option>
+                            <option>Secondaire 3</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Matière *</label>
+                        <select class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Sélectionner une matière</option>
+                            <option>Mathématiques</option>
+                            <option>Physique</option>
+                            <option>Chimie</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Type de questions *</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="checkbox" name="question-type" value="qcm" checked class="w-4 h-4 text-blue-600">
+                            <div>
+                                <p class="font-medium text-slate-800">QCM (Questions à choix multiples)</p>
+                                <p class="text-xs text-slate-500">Plusieurs réponses possibles, une seule correcte</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="checkbox" name="question-type" value="vrai-faux" class="w-4 h-4 text-blue-600">
+                            <div>
+                                <p class="font-medium text-slate-800">Vrai / Faux</p>
+                                <p class="text-xs text-slate-500">Questions avec réponse Vrai ou Faux</p>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-3 p-3 border border-slate-200 rounded-lg cursor-pointer hover:bg-slate-50">
+                            <input type="checkbox" name="question-type" value="ouverte" class="w-4 h-4 text-blue-600">
+                            <div>
+                                <p class="font-medium text-slate-800">Questions ouvertes</p>
+                                <p class="text-xs text-slate-500">Réponses libres nécessitant une correction manuelle</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Date et heure de début *</label>
+                        <input type="datetime-local" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Temps limite (minutes) *</label>
+                        <input type="number" min="1" placeholder="30" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-slate-700 mb-2">Temps limite par question (secondes) - Optionnel</label>
+                    <input type="number" min="1" placeholder="60" class="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <p class="text-xs text-slate-500 mt-1">Si laissé vide, seul le temps limite global s'appliquera</p>
+                </div>
+                <div>
+                    <label class="flex items-center gap-3">
+                        <input type="checkbox" checked class="w-4 h-4 text-blue-600">
+                        <span class="text-sm text-slate-700">Note automatique (pour QCM et Vrai/Faux uniquement)</span>
+                    </label>
+                </div>
+                <div class="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
+                    <button onclick="closeModal('modal-quiz')" class="px-4 py-2 text-sm font-medium text-slate-700 bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors">
+                        Annuler
+                    </button>
+                    <button onclick="createQuiz()" class="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors">
+                        Créer le quiz
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+        function createQuiz() {
+            // Logique de création du quiz
+            alert('Quiz créé avec succès !');
+            closeModal('modal-quiz');
+        }
+    </script>
+</body>
+</html>
+
