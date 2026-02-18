@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 // GET - Récupérer les matières et classes attribuées à un professeur
 export async function GET(
@@ -42,7 +43,7 @@ export async function GET(
     return NextResponse.json({ error: classesError.message }, { status: 500 })
   }
 
-  const classes = classesData?.map((c: any) => c.classe?.nom).filter(Boolean) || []
+  const classes = classesData?.map((c: { classe?: { nom?: string } | { nom?: string }[] }) => getClasseNom(c.classe)).filter(Boolean) || []
 
   return NextResponse.json({ matieres, classes })
 }

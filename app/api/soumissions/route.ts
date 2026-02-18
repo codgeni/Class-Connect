@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 // GET - Liste des soumissions pour le professeur
 export async function GET(request: NextRequest) {
@@ -83,7 +84,7 @@ export async function POST(request: NextRequest) {
     .eq('eleve_id', user.id)
     .single()
 
-  const classeNom = eleveClasse?.classe?.nom || null
+  const classeNom = getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null)
   if (devoir.classe && classeNom && devoir.classe !== classeNom) {
     return NextResponse.json(
       { error: 'Vous n\'êtes pas autorisé à soumettre ce devoir' },

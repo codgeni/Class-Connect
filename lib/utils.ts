@@ -68,6 +68,18 @@ export function formatNomComplet(nom?: string | null, prenom?: string | null): s
 /**
  * Retourne un tableau d’URLs à partir de fichier_url (une URL ou un JSON de plusieurs URLs).
  */
+/**
+ * Extrait le nom de classe depuis une relation Supabase (typée comme objet ou tableau).
+ */
+export function getClasseNom(classe: { nom?: string } | { nom?: string }[] | null | undefined): string | null {
+  if (classe == null) return null
+  if (Array.isArray(classe)) return classe[0]?.nom ?? null
+  return classe.nom ?? null
+}
+
+/**
+ * Retourne un tableau d'URLs à partir de fichier_url (une URL ou un JSON de plusieurs URLs).
+ */
 export function getFichierUrls(fichier_url: string | string[] | undefined): string[] {
   if (!fichier_url) return []
   if (Array.isArray(fichier_url)) return fichier_url

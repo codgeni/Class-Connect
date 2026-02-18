@@ -38,7 +38,7 @@ export async function createSession(user: User): Promise<string> {
   }
   
   const secret = getJwtSecret()
-  const token = await new SignJWT(payload)
+  const token = await new SignJWT(payload as unknown as Record<string, unknown>)
     .setProtectedHeader({ alg: 'HS256' })
     .setIssuedAt()
     .setExpirationTime('7d')
@@ -56,7 +56,7 @@ export async function verifyToken(token: string): Promise<SessionPayload | null>
     }
     const secret = getJwtSecret()
     const { payload } = await jwtVerify(token, secret)
-    return payload as SessionPayload
+    return payload as unknown as SessionPayload
   } catch (error) {
     console.error('Token verification failed:', error)
     return null

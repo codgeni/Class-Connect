@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation'
 import { getCurrentUserFromCookies } from '@/lib/auth'
 import Sidebar from '@/components/Sidebar'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 export default async function ParametresPage() {
   const user = await getCurrentUserFromCookies()
@@ -27,6 +28,8 @@ export default async function ParametresPage() {
     .select('classe:classes(nom), section')
     .eq('eleve_id', user.id)
     .single()
+
+  const classeNom = getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null)
 
   return (
     <div className="h-screen flex overflow-hidden bg-slate-50">
@@ -63,12 +66,12 @@ export default async function ParametresPage() {
                   </div>
                 </div>
 
-                {eleveClasse?.classe && (
+                {classeNom && (
                   <div>
                     <label className="block text-sm font-medium text-slate-700 mb-2">Classe</label>
                     <div className="px-4 py-2 bg-slate-50 border border-slate-200 rounded-lg text-slate-800">
-                      {eleveClasse.classe.nom}
-                      {eleveClasse.section && ` - ${eleveClasse.section}`}
+                      {classeNom}
+                      {eleveClasse?.section && ` - ${eleveClasse.section}`}
                     </div>
                   </div>
                 )}

@@ -143,6 +143,22 @@ export default function MessagesPage() {
     }
   }
 
+  const handleSelectEleve = (eleveId: string) => {
+    const conv = conversations.find(c => c.eleve_id === eleveId)
+    if (conv) {
+      setSelectedConversation(conv)
+    } else {
+      const eleve = availableEleves.find(e => e.id === eleveId)
+      if (eleve) {
+        setSelectedConversation({
+          eleve_id: eleve.id,
+          eleve: { nom: eleve.nom, prenom: eleve.prenom, classe: eleve.classe },
+          unreadCount: 0,
+        })
+      }
+    }
+  }
+
   const handleSendMessage = async () => {
     if (!newMessage.trim() || !selectedConversation || !user || sending) return
 

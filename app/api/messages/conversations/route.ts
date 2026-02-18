@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 // GET - Liste des conversations pour le professeur
 export async function GET(request: NextRequest) {
@@ -75,7 +76,7 @@ export async function GET(request: NextRequest) {
         eleve: {
           nom: eleve.nom,
           prenom: eleve.prenom,
-          classe: eleveClasse?.classe?.nom,
+          classe: getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null),
         },
         lastMessage: lastMessage || undefined,
         unreadCount: unreadCount || 0,

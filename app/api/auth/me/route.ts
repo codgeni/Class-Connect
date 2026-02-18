@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 export async function GET(request: NextRequest) {
   const user = await getCurrentUser(request)
@@ -26,8 +27,7 @@ export async function GET(request: NextRequest) {
       .eq('eleve_id', user.id)
       .single()
 
-    const classe = eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null
-    classeNom = Array.isArray(classe) ? classe[0]?.nom ?? null : classe?.nom ?? null
+    classeNom = getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null)
   }
 
   return NextResponse.json({

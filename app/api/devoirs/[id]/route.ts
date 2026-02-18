@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 // GET - Récupérer un devoir spécifique
 export async function GET(
@@ -45,7 +46,7 @@ export async function GET(
       .eq('eleve_id', user.id)
       .single()
 
-    const classeNom = eleveClasse?.classe?.nom || null
+    const classeNom = getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null)
     if (classeNom && devoir.classe !== classeNom) {
       return NextResponse.json(
         { error: 'Vous n\'êtes pas autorisé à voir ce devoir' },

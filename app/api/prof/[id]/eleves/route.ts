@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser } from '@/lib/auth'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 
 // GET - Liste des élèves des classes assignées au professeur
 export async function GET(
@@ -64,7 +65,7 @@ export async function GET(
       id: eleve.id,
       nom: eleve.nom,
       prenom: eleve.prenom,
-      classe: eleveClasse?.classe?.nom,
+      classe: getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null),
     }
   })
 

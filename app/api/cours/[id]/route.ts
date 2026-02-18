@@ -14,19 +14,18 @@ export async function GET(
   }
 
   const supabase = getSupabaseAdmin()
-  
+
   let query = supabase
     .from('cours')
     .select('*, prof:users!cours_prof_id_fkey(nom)')
     .eq('id', params.id)
-    .single()
 
   // Les profs ne peuvent voir que leurs propres cours
   if (user.role === 'prof') {
     query = query.eq('prof_id', user.id)
   }
 
-  const { data, error } = await query
+  const { data, error } = await query.single()
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 })

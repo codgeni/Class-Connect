@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [codeLogin, setCodeLogin] = useState('')
@@ -234,5 +234,21 @@ export default function LoginPage() {
         </div>
       </div>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="relative h-screen w-full flex flex-col justify-center items-center">
+        <div className="absolute inset-0 z-0">
+          <div className="absolute inset-0 bg-slate-900/80"></div>
+          <div className="bg-gradient-to-t from-blue-900/90 to-transparent absolute inset-0"></div>
+        </div>
+        <div className="relative z-10 text-white">Chargement...</div>
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
   )
 }

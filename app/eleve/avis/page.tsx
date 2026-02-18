@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { getCurrentUserFromCookies } from '@/lib/auth'
 import Sidebar from '@/components/Sidebar'
 import { getSupabaseAdmin } from '@/lib/supabase'
+import { getClasseNom } from '@/lib/utils'
 import { formatDate, formatTime } from '@/lib/utils'
 import NotificationSeen from '@/components/NotificationSeen'
 
@@ -31,7 +32,7 @@ export default async function AvisPage() {
     .eq('eleve_id', user.id)
     .single()
 
-  const classeNom = eleveClasse?.classe?.nom || null
+  const classeNom = getClasseNom(eleveClasse?.classe as { nom?: string } | { nom?: string }[] | null)
 
   const userWithPrenom = { ...user, prenom: eleveData?.prenom, classe: classeNom }
 

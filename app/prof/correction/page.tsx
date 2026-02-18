@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { Suspense, useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import Sidebar from '@/components/Sidebar'
@@ -30,7 +30,7 @@ interface Soumission {
   corrected_at?: string
 }
 
-export default function CorrectionPage() {
+function CorrectionContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [user, setUser] = useState<any>(null)
@@ -78,7 +78,7 @@ export default function CorrectionPage() {
         setDevoirsOptions(devoirsData.devoirs.map((d: any) => ({ id: d.id, titre: d.titre })))
         
         // Extraire les classes uniques
-        const classes = [...new Set(devoirsData.devoirs.map((d: any) => d.classe).filter(Boolean))]
+        const classes: string[] = [...new Set(devoirsData.devoirs.map((d: any) => d.classe).filter(Boolean))] as string[]
         setClassesOptions(classes)
       }
     } catch (err) {
@@ -159,7 +159,7 @@ export default function CorrectionPage() {
       const updated = soumissions.find(s => s.id === selectedSoumission.id)
       if (updated) {
         updated.note = parseFloat(note)
-        updated.commentaire = commentaire.trim() || null
+        updated.commentaire = commentaire.trim() || undefined
         updated.corrige = true
         updated.corrected_at = new Date().toISOString()
         setSelectedSoumission(updated)
@@ -606,5 +606,17 @@ export default function CorrectionPage() {
         </main>
       </div>
     </div>
+  )
+}
+
+export default function CorrectionPage() {
+  return (
+    <Suspense fallback={
+      <div className="h-screen flex items-center justify-center bg-slate-50">
+        <p className="text-slate-500">Chargement...</p>
+      </div>
+    }>
+      <CorrectionContent />
+    </Suspense>
   )
 }
